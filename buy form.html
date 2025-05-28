@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Car | Static Empire</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>Buy Your Dream Car</h1>
+    <p>Complete the form to finalize your purchase</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="faqs.html">FAQs</a>
+  </nav>
+
+  <div class="container">
+    <form onsubmit="handleFormSubmit(event)" class="buy-form">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="carModel">Car Model</label>
+      <input type="text" id="carModel" name="carModel" required>
+
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Submit Purchase Request</button>
+    </form>
+
+    <p id="confirmationMessage" style="color: lightgreen; display: none; text-align: center; font-size: 1.2rem; margin-top: 20px;">
+      ✅ Thank you! Your purchase request has been sent.
+    </p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Static Empire. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      if (fullName && email && phone) {
+        document.getElementById('confirmationMessage').style.display = 'block';
+
+        // Optionally reset the form (except car model)
+        document.querySelector('.buy-form').reset();
+        document.getElementById('carModel').value = "BMW E30 325is Evo 2";
+      } else {
+        alert('Please fill in all required fields.');
+      }
+    }
+  </script>
+</body>
+</html>

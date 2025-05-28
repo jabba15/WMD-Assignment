@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tee's Auto - Quality Pre-Owned Vehicles</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Global Styles */
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        
+        .logo span {
+            color: white;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #003366;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+        }
+        
+        /* Featured Vehicles */
+        .featured {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #003366;
+        }
+        
+        .vehicles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .vehicle-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .vehicle-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .vehicle-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .vehicle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .vehicle-card:hover .vehicle-img img {
+            transform: scale(1.1);
+        }
+        
+        .vehicle-info {
+            padding: 20px;
+        }
+        
+        .vehicle-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #003366;
+        }
+        
+        .vehicle-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .price {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #003366;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #003366;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .services .section-title h2 {
+            color: white;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        
+        .service-card:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .contact-form button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background-color: #002244;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #002244;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Tee's <span>Auto</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#inventory">Inventory</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#financing">Financing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Quality Pre-Owned Vehicles</h1>
+                <p>Find your perfect car at unbeatable prices with our no-haggle pricing policy</p>
+                <a href="#inventory" class="btn">Browse Inventory</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Vehicles -->
+    <section class="featured" id="inventory">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Vehicles</h2>
+                <p>Check out our latest arrivals</p>
+            </div>
+            
+            <div class="vehicles">
+                <!-- Vehicle 1 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="2020 Toyota Camry">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>2020 Toyota Camry</h3>
+                        <div class="vehicle-details">
+                            <span>25,000 mi</span>
+                            <span>Automatic</span>
+                            <span>4-cyl</span>
+                        </div>
+                        <div class="price">$22,995</div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Vehicle 2 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="2019 Ford F-150">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>2019 Ford F-150</h3>
+                        <div class="vehicle-details">
+                            <span>32,500 mi</span>
+                            <span>Automatic</span>
+                            <span>V8</span>
+                        </div>
+                        <div class="price">$28,750</div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Vehicle 3 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="2021 Honda CR-V">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>2021 Honda CR-V</h3>
+                        <div class="vehicle-details">
+                            <span>18,000 mi</span>
+                            <span>Automatic</span>
+                            <span>4-cyl</span>
+                        </div>
+                        <div class="price">$26,499</div>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer more than just great cars</p>
+            </div>
+            
+            <div class="service-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Vehicle Inspection</h3>
+                    <p>Comprehensive 150-point inspection on all our vehicles</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Service Center</h3>
+                    <p>State-of-the-art service center for all your maintenance needs</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>Flexible Financing</h3>
+                    <p>Competitive rates and terms to fit your budget</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Extended Warranty</h3>
+                    <p>Peace of mind with our comprehensive warranty options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+            </div>
+            
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"I found the perfect car at Tee's Auto. The staff was knowledgeable and didn't pressure me at all. Would definitely recommend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p>- Michael Johnson</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The financing process was so easy. I got approved with a great rate and drove home the same day in my dream car."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p>- Sarah Williams</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"After a bad experience at another dealer, Tee's Auto restored my faith in car dealerships. Honest and fair pricing."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <p>- David Thompson</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Visit us or get in touch today</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Tee's Auto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Auto Plaza, Cityville, ST 12345</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@teesauto.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am - 7pm<br>Sat: 9am - 5pm<br>Sun: Closed</p>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tee's Auto</h3>
+                    <p>Your trusted source for quality pre-owned vehicles since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#inventory">Inventory</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#financing">Financing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Vehicle Inspection</a></li>
+                        <li><a href="#">Financing</a></li>
+                        <li><a href="#">Trade-In</a></li>
+                        <li><a href="#">Extended Warranty</a></li>
+                        <li><a href="#">Service Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Tee's Auto. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
