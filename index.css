@@ -1,133 +1,132 @@
-/* Base Styles */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  height: 100%;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-  height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  border-radius: 5px;
-}
-
-/* Header */
 header {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 40px 20px 10px;
-  text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
 
-header h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-/* Navigation */
 nav {
-  background-color: rgba(30, 30, 30, 0.8);
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 20px 0 40px;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+    text-decoration: underline;
 }
 
-/* Hero Section */
 .hero {
-  background: url(images/back.jpg) no-repeat center center / cover;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px black;
+    background: url(images/back.jpg) no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px black;
 }
 
-/* Containers */
 .container {
-  padding: 30px;
+    padding: 30px;
 }
 
 .section {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .section h2 {
-  border-bottom: 2px solid #333;
-  padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
 }
 
-/* Grid Systems */
-.car-grid,
-.service-grid,
-.contact-container {
+.car-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.car {
+    flex: 1 1 300px;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.car img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+.car:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+html {
+    scroll-behavior: smooth;
+}
+nav a {
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #666;
+    transform: scale(1.05);
+}
+.service-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-/* Cards - Car & Service */
-.car, .service-card {
+.service-card {
   background: white;
-  padding: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  flex: 1 1 250px;
+  padding: 20px;
   text-align: center;
+  max-width: 250px;
+  flex: 1 1 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.car:hover,
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
 }
 
 .service-card img {
+  width: 100%;
+  border-radius: 8px;
   height: 150px;
   object-fit: cover;
   margin-bottom: 15px;
-  border-radius: 8px;
 }
 
 .service-card h3 {
@@ -140,31 +139,43 @@ nav a:hover {
   color: #555;
 }
 
-/* Forms */
-.buy-form,
-.tradein-form,
-.service-form,
-.contact-form {
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.service-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 250px;
+  flex: 1 1 200px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.buy-form {
   max-width: 600px;
   margin: auto;
   padding: 20px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 .buy-form input,
-.buy-form textarea,
-.tradein-form input,
-.tradein-form select,
-.service-form input,
-.service-form textarea,
-.service-form select,
-.contact-form input,
-.contact-form textarea {
+.buy-form textarea {
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -172,145 +183,130 @@ nav a:hover {
   width: 100%;
 }
 
-.contact-form input,
-.contact-form textarea {
-  background: transparent;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #ccc;
-}
-
-.buy-form button,
-.tradein-form button,
-.service-form button,
-.contact-form button,
-button {
-  background-color: #e63946;
+.buy-form button {
+  background-color: #222;
   color: white;
   padding: 12px;
   font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
-.buy-form button:hover,
-.tradein-form button:hover,
-.service-form button:hover,
-.contact-form button:hover,
-button:hover {
-  background-color: #d62839;
-  transform: scale(1.05);
+.buy-form button:hover {
+  background-color: #444;
 }
-
-/* BUY NOW Button */
+/* BUY NOW Button Style */
 .car a button {
-  background-color: #e60023;
+  background-color: #e60023;         /* Red, bold button */
+  color: #fff;                        /* White text */
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Hover effect */
 .car a button:hover {
-  background-color: #cc001f;
+  background-color: #cc001f;          /* Darker red */
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.tradein-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Contact Page */
-.contact {
-  position: relative;
-  padding: 60px 20px;
-  color: #fff;
-  z-index: 2;
+.tradein-form label {
+  font-weight: 600;
+  color: #333;
 }
 
-.contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.contact .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title h2 {
-  font-size: 2.5rem;
-}
-
-.section-title p {
-  font-size: 1.1rem;
-  color: #ddd;
-}
-
-.contact-info,
-.contact-form {
-  flex: 1 1 300px;
-  padding: 30px;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.contact-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
-
-.contact-info p {
+.tradein-form input,
+.tradein-form select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
-  color: #eee;
+  width: 100%;
+  transition: border 0.3s ease;
 }
 
-.contact-info i {
-  margin-right: 10px;
-  color: #00bfff;
+.tradein-form input:focus,
+.tradein-form select:focus {
+  border-color: #0077cc;
+  outline: none;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px 0;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  margin-top: 40px;
+.tradein-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #0077cc;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* Background Video */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
+.tradein-form button:hover {
+  background-color: #005fa3;
 }
-
-/* Overlay for full-screen */
-.overlay {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
+.service-form {
+  background-color: #f5f5f5;
   padding: 20px;
-  min-height: 100vh;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Social Icons */
+.service-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.service-form input,
+.service-form textarea,
+.service-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.service-form button {
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.service-form button:hover {
+  background-color: #1565c0;
+}
 .social-icons {
   margin-top: 0.5rem;
   display: flex;
@@ -321,15 +317,201 @@ footer {
 .social-icons a {
   color: #999;
   font-size: 1.4rem;
-  text-decoration: none;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
-.social-icons a:hover {
+.social-icons a:hover,
+.social-icons a:focus {
   color: #ff4b5c;
 }
+.social-icons {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
 
-/* Page Layout */
+.social-icons a {
+  color: #999;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+  color: #ff4b5c;
+}
+button {
+  background-color: #e63946; /* red-ish bold color */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #d62839;
+  transform: scale(1.05);
+}
+/* Fullscreen video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay (the actual content) */
+.overlay {
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  backdrop-filter: brightness(0.7); /* optional: dims background slightly */
+}
+
+/* Contact section styling */
+.contact-section {
+  background: rgba(0, 0, 0, 0.5); /* optional for readability */
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+/* Navigation */
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  color: #ccc;
+}
+/* Background Video */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay content wrapper */
+.overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Header styling */
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px 20px 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+/* Navigation menu */
+nav {
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Contact section box */
+.contact-section {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.1em;
+}
+
+.contact-section p {
+  margin: 15px 0;
+}
+
+.contact-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 40px;
+}
+/* Make full height layout work */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -343,111 +525,142 @@ footer {
   justify-content: center;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
+/* Ensure the video background covers full screen */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
-@media (prefers-color-scheme: dark) {
-  html, body {
-    background: #121212;
-    color: #e0e0e0;
-  }
 
-  header {
-    background-color: rgba(255, 255, 255, 0.1);
+/* Overlay content styles */
+.overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+}
+/* Contact Section Styles */
+.contact {
+    position: relative;
+    padding: 60px 20px;
     color: #fff;
-  }
+    z-index: 2;
+}
 
-  nav {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Optional: dark overlay for contrast */
+    z-index: 1;
+}
 
-  nav a {
+.contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1 1 300px;
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px); /* Optional: glass effect */
+    background: rgba(255, 255, 255, 0.05); /* Light translucent bg */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
+    color: #fff;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1rem;
     color: #eee;
-    background-color: rgba(255, 255, 255, 0.05);
-  }
+}
 
-  nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+.contact-info i {
+    margin-right: 10px;
+    color: #00bfff;
+}
 
-  .car {
-    background: #1e1e1e;
-    border-color: #444;
-  }
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-  .car a button {
-    background-color: #ff4569;
-  }
-
-  .car a button:hover {
-    background-color: #cc3755;
-  }
-
-  .service-card {
-    background: #1e1e1e;
-    border-color: #444;
-    color: #f1f1f1;
-  }
-
-  .buy-form,
-  .tradein-form,
-  .service-form {
-    background: #1e1e1e;
-    color: #eee;
-    border-color: #333;
-  }
-
-  .buy-form input,
-  .buy-form textarea,
-  .tradein-form input,
-  .tradein-form select,
-  .service-form input,
-  .service-form textarea,
-  .service-form select {
-    background-color: #2a2a2a;
-    color: #f1f1f1;
-    border-color: #555;
-  }
-
-  .contact {
-    color: #ccc;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    background: rgba(255, 255, 255, 0.05);
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: transparent;
     color: #fff;
-  }
+}
 
-  .contact-info,
-  .contact-form {
-    background: rgba(0, 0, 0, 0.5);
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .social-icons a {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
     color: #ccc;
-  }
+}
 
-  .social-icons a:hover,
-  .social-icons a:focus {
-    color: #ff6b81;
-  }
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00bfff;
+    outline: none;
+}
 
-  button {
-    background-color: #ff4b5c;
+.contact-form button {
+    padding: 12px;
+    background-color: #00bfff;
     color: #fff;
-  }
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-  button:hover {
-    background-color: #c0394b;
-  }
+.contact-form button:hover {
+    background-color: #0090cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
 }
