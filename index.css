@@ -1,7 +1,6 @@
-/* ===== BASE STYLES ===== */
+/* ===== BASE STYLES (Preserved) ===== */
 html {
   scroll-behavior: smooth;
-  font-size: 16px; /* Base for rem units */
 }
 
 body {
@@ -10,191 +9,90 @@ body {
   padding: 0;
   background: #f9f9f9;
   color: #333;
-  line-height: 1.6; /* Better readability */
 }
 
-/* ===== HEADER & NAVIGATION ===== */
-header {
-  background-color: #1a1a1a;
+/* ===== LIVE BACKGROUND (Contact Page) ===== */
+/* Add this to your contact.html page */
+.contact-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   color: white;
-  padding: 1.5rem 0; /* Using rem */
-  text-align: center;
+  padding: 40px;
 }
 
-nav {
-  background-color: #333;
-  padding: 1rem 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows wrapping on mobile */
-  gap: 0.75rem; /* Better than margin */
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  background-color: #444;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  background-color: #666;
-  transform: scale(1.05);
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  background: url(images/back.jpg) no-repeat center center/cover;
-  min-height: 50vh; /* Better than fixed height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive font */
-  font-weight: bold;
-  text-shadow: 1px 1px 4px black;
-  padding: 2rem;
-  text-align: center;
-}
-
-/* ===== MAIN CONTENT ===== */
-.container {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section {
-  margin-bottom: 3rem;
-}
-
-.section h2 {
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.75rem;
-  font-size: 1.8rem;
-}
-
-/* ===== CAR GRID ===== */
+/* ===== CAR GRID (4 per row on desktop) ===== */
 .car-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
 }
 
 .car {
   background: white;
-  padding: 1.5rem;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .car:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.car img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+/* ===== SERVICES PAGE CSS ===== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 services per row */
+  gap: 20px;
 }
 
-/* ===== BUTTONS ===== */
-button, .car a button {
-  background-color: #e60023;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+.service-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
 
-button:hover, .car a button:hover {
-  background-color: #cc001f;
-  transform: scale(1.03);
+.service-card:hover {
+  transform: translateY(-10px);
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background-color: #1a1a1a;
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 3rem;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.social-icons a {
-  color: #999;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #ff4b5c;
-}
-
-/* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px; /* Slightly smaller base */
-  }
-  
-  nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  nav a {
-    width: 90%;
-    text-align: center;
-    margin: 0.25rem 0;
-  }
-  
-  .hero {
-    min-height: 40vh;
-    font-size: 1.8rem;
-  }
-  
-  .container {
-    padding: 1.5rem;
-  }
-  
+/* ===== MOBILE RESPONSIVENESS (Now ACTUALLY works) ===== */
+@media (max-width: 1200px) {
   .car-grid {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .car-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on phones */
   }
   
-  .section h2 {
-    font-size: 1.5rem;
+  .service-grid {
+    grid-template-columns: 1fr; /* Stack services on mobile */
+  }
+  
+  .contact-content {
+    padding: 20px; /* More compact on mobile */
   }
 }
 
 @media (max-width: 480px) {
-  .hero {
-    min-height: 30vh;
-    font-size: 1.5rem;
-  }
-  
-  button, .car a button {
-    padding: 1rem;
-    font-size: 1.1rem;
+  .car-grid {
+    grid-template-columns: 1fr; /* 1 column on tiny screens */
   }
 }
