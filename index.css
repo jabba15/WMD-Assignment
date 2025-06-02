@@ -1,126 +1,453 @@
-/* ===== RESTORED HEADER/NAV ===== */
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Header */
 header {
-  background-color: #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 20px 0;
+  padding: 40px 20px 10px;
   text-align: center;
 }
 
 header h1 {
-  margin: 0;
   font-size: 2.5em;
-  letter-spacing: 1px;
+  margin: 0;
 }
 
 header p {
-  margin: 5px 0 0;
   font-size: 1.2em;
-  color: #ccc;
+  margin-top: 10px;
 }
 
+/* Navigation */
 nav {
-  background-color: #333;
-  padding: 15px 0;
-  text-align: center;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0 40px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px; /* Proper spacing restored */
-  font-size: 1.1em;
-  position: relative;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-nav a:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #e60023;
-  transition: width 0.3s;
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
-nav a:hover:after {
-  width: 100%;
-}
-
-/* ===== RESTORED HERO SECTION ===== */
+/* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.7), url('images/back.jpg') no-repeat center center;
-  background-size: cover;
+  background: url(images/back.jpg) no-repeat center center / cover;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
 }
 
-/* ===== PROPER 4-COLUMN GRID ===== */
-.car-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+/* Containers */
+.container {
   padding: 30px;
 }
 
-.car {
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+/* Grid Systems */
+.car-grid,
+.service-grid,
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Cards - Car & Service */
+.car, .service-card {
   background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
-.car:hover {
+.car:hover,
+.service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
-/* ===== MOBILE RESPONSIVENESS (NOW PROPER) ===== */
-@media (max-width: 1200px) {
-  .car-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.service-card img {
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 8px;
 }
 
+.service-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+}
+
+.service-card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Forms */
+.buy-form,
+.tradein-form,
+.service-form,
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.buy-form input,
+.buy-form textarea,
+.tradein-form input,
+.tradein-form select,
+.service-form input,
+.service-form textarea,
+.service-form select,
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.buy-form button,
+.tradein-form button,
+.service-form button,
+.contact-form button,
+button {
+  background-color: #e63946;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buy-form button:hover,
+.tradein-form button:hover,
+.service-form button:hover,
+.contact-form button:hover,
+button:hover {
+  background-color: #d62839;
+  transform: scale(1.05);
+}
+
+/* BUY NOW Button */
+.car a button {
+  background-color: #e60023;
+  margin-top: 10px;
+}
+
+.car a button:hover {
+  background-color: #cc001f;
+}
+
+/* Contact Page */
+.contact {
+  position: relative;
+  padding: 60px 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1 1 300px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #eee;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #00bfff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 40px;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay for full-screen */
+.overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: #999;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff4b5c;
+}
+
+/* Page Layout */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  nav a {
-    margin: 0 10px;
-    font-size: 1em;
+  .contact-container {
+    flex-direction: column;
   }
-  
-  .hero {
-    height: 200px;
-    font-size: 1.8em;
-  }
-  
-  .car-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 20px;
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: #121212;
+    color: #e0e0e0;
+  }
 
-@media (max-width: 480px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
   nav {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
   }
-  
+
   nav a {
-    margin: 5px 0;
-    padding: 5px;
+    color: #eee;
+    background-color: rgba(255, 255, 255, 0.05);
   }
-  
-  .car-grid {
-    grid-template-columns: 1fr;
+
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .car {
+    background: #1e1e1e;
+    border-color: #444;
+  }
+
+  .car a button {
+    background-color: #ff4569;
+  }
+
+  .car a button:hover {
+    background-color: #cc3755;
+  }
+
+  .service-card {
+    background: #1e1e1e;
+    border-color: #444;
+    color: #f1f1f1;
+  }
+
+  .buy-form,
+  .tradein-form,
+  .service-form {
+    background: #1e1e1e;
+    color: #eee;
+    border-color: #333;
+  }
+
+  .buy-form input,
+  .buy-form textarea,
+  .tradein-form input,
+  .tradein-form select,
+  .service-form input,
+  .service-form textarea,
+  .service-form select {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border-color: #555;
+  }
+
+  .contact {
+    color: #ccc;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+
+  .contact-info,
+  .contact-form {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .social-icons a {
+    color: #ccc;
+  }
+
+  .social-icons a:hover,
+  .social-icons a:focus {
+    color: #ff6b81;
+  }
+
+  button {
+    background-color: #ff4b5c;
+    color: #fff;
+  }
+
+  button:hover {
+    background-color: #c0394b;
   }
 }
